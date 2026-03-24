@@ -1,0 +1,41 @@
+<svg width="1600" height="920" viewBox="0 0 1600 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="920" rx="40" fill="#F7F7F2"/>
+  <rect x="80" y="76" width="1440" height="768" rx="32" fill="#0B132B"/>
+  <text x="132" y="156" fill="#F7F7F2" font-size="54" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Runtime Surface</text>
+  <text x="132" y="206" fill="#D8F3DC" font-size="28" font-family="Segoe UI, Helvetica, Arial, sans-serif">The MVP ships as a practical Rust crate, not a toy API.</text>
+
+  <rect x="132" y="274" width="296" height="190" rx="28" fill="#183A37"/>
+  <text x="168" y="338" fill="#E0FF4F" font-size="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Models</text>
+  <text x="168" y="388" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">OpenAI-compatible adapter</text>
+  <text x="168" y="420" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Mock model for tests</text>
+
+  <rect x="132" y="522" width="296" height="190" rx="28" fill="#183A37"/>
+  <text x="168" y="586" fill="#5BC0BE" font-size="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Tools</text>
+  <text x="168" y="636" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Async trait + FnTool</text>
+  <text x="168" y="668" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Looped through the agent runtime</text>
+
+  <rect x="540" y="244" width="520" height="500" rx="32" fill="#1C2541" stroke="#FFD166" stroke-width="3"/>
+  <text x="592" y="320" fill="#FFD166" font-size="42" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Crew Core</text>
+  <text x="592" y="380" fill="#F7F7F2" font-size="27" font-family="Segoe UI, Helvetica, Arial, sans-serif">Agent</text>
+  <text x="592" y="422" fill="#D8F3DC" font-size="22" font-family="Segoe UI, Helvetica, Arial, sans-serif">role, goal, backstory, tool set, model</text>
+  <text x="592" y="484" fill="#F7F7F2" font-size="27" font-family="Segoe UI, Helvetica, Arial, sans-serif">Task</text>
+  <text x="592" y="526" fill="#D8F3DC" font-size="22" font-family="Segoe UI, Helvetica, Arial, sans-serif">dependencies, expected output, context</text>
+  <text x="592" y="588" fill="#F7F7F2" font-size="27" font-family="Segoe UI, Helvetica, Arial, sans-serif">Crew</text>
+  <text x="592" y="630" fill="#D8F3DC" font-size="22" font-family="Segoe UI, Helvetica, Arial, sans-serif">sequential or hierarchical execution</text>
+  <text x="592" y="672" fill="#D8F3DC" font-size="22" font-family="Segoe UI, Helvetica, Arial, sans-serif">transcripts, mermaid graphs, deterministic tests</text>
+
+  <rect x="1172" y="274" width="296" height="190" rx="28" fill="#C44900"/>
+  <text x="1208" y="338" fill="#FFF3B0" font-size="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Blueprints</text>
+  <text x="1208" y="388" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">YAML project files</text>
+  <text x="1208" y="420" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Runtime registry resolution</text>
+
+  <rect x="1172" y="522" width="296" height="190" rx="28" fill="#C44900"/>
+  <text x="1208" y="586" fill="#FFF3B0" font-size="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Flows</text>
+  <text x="1208" y="636" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Typed state orchestration</text>
+  <text x="1208" y="668" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Deterministic glue around crews</text>
+
+  <path d="M428 370H528" stroke="#D8F3DC" stroke-width="8" stroke-linecap="round"/>
+  <path d="M428 618H528" stroke="#5BC0BE" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1060 370H1168" stroke="#FFD166" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1060 618H1168" stroke="#FFD166" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg width="1600" height="860" viewBox="0 0 1600 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="123" y1="82" x2="1458" y2="754" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091540"/>
+      <stop offset="0.45" stop-color="#183A37"/>
+      <stop offset="1" stop-color="#C44900"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="860" rx="38" fill="url(#bg)"/>
+  <circle cx="1320" cy="150" r="210" fill="#FFD166" fill-opacity="0.16"/>
+  <circle cx="240" cy="720" r="250" fill="#5BC0BE" fill-opacity="0.16"/>
+  <rect x="84" y="84" width="1432" height="692" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.2"/>
+  <text x="132" y="228" fill="#F7F7F2" font-size="82" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">crewai-rs</text>
+  <text x="132" y="296" fill="#D8F3DC" font-size="34" font-family="Segoe UI, Helvetica, Arial, sans-serif">Rust-native crews, typed flows, and production-ready AI orchestration.</text>
+  <g opacity="0.95">
+    <rect x="132" y="382" width="320" height="150" rx="24" fill="#0B132B" stroke="#5BC0BE" stroke-width="2"/>
+    <text x="168" y="438" fill="#D8F3DC" font-size="32" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Agents</text>
+    <text x="168" y="484" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Role, goal, tools, model</text>
+    <text x="168" y="516" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Builder-driven config</text>
+  </g>
+  <g opacity="0.95">
+    <rect x="518" y="332" width="330" height="200" rx="24" fill="#0B132B" stroke="#FFD166" stroke-width="2"/>
+    <text x="556" y="392" fill="#FFF3B0" font-size="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Crew Runtime</text>
+    <text x="556" y="438" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Sequential + hierarchical</text>
+    <text x="556" y="470" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Tool loop + transcripts</text>
+    <text x="556" y="502" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">YAML blueprints</text>
+  </g>
+  <g opacity="0.95">
+    <rect x="914" y="382" width="320" height="150" rx="24" fill="#0B132B" stroke="#E0FF4F" stroke-width="2"/>
+    <text x="950" y="438" fill="#E0FF4F" font-size="32" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Flows</text>
+    <text x="950" y="484" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Typed state machines</text>
+    <text x="950" y="516" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">Deterministic orchestration</text>
+  </g>
+  <path d="M452 456H510" stroke="#D8F3DC" stroke-width="8" stroke-linecap="round"/>
+  <path d="M848 432H906" stroke="#FFF3B0" stroke-width="8" stroke-linecap="round"/>
+  <rect x="1272" y="382" width="186" height="150" rx="24" fill="#0B132B" stroke="#F7F7F2" stroke-width="2"/>
+  <text x="1308" y="438" fill="#F7F7F2" font-size="30" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">Deploy</text>
+  <text x="1308" y="484" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">One binary</text>
+  <text x="1308" y="516" fill="#F7F7F2" font-size="24" font-family="Segoe UI, Helvetica, Arial, sans-serif">or one crate</text>
+  <path d="M1234 456H1270" stroke="#F7F7F2" stroke-width="8" stroke-linecap="round"/>
+</svg>

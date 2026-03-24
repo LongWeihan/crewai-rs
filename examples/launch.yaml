@@ -1,0 +1,27 @@
+name: launch-crew
+process: hierarchical
+manager:
+  id: manager
+  role: Product Strategist
+  goal: Keep the crew focused on a strong launch narrative.
+  model: planner
+agents:
+  - id: researcher
+    role: Rust OSS Researcher
+    goal: Find demand signals for crewai-rs.
+    model: planner
+    tools: [search]
+  - id: writer
+    role: Launch Writer
+    goal: Convert research into public-facing copy.
+    model: writer
+tasks:
+  - id: research-market
+    description: Research launch opportunities for crewai-rs.
+    expected_output: Bullet findings with proof points.
+    agent: researcher
+  - id: write-brief
+    description: Turn findings into a markdown launch brief.
+    expected_output: A concise markdown brief.
+    agent: writer
+    depends_on: [research-market]
