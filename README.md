@@ -207,6 +207,10 @@ Benchmark environment:
 
 One practical takeaway from this snapshot: adding the manager layer increased kickoff overhead by about **23.8% to 25.4%** versus the sequential path in the same benchmark.
 
+<p align="center">
+  <img src="./assets/benchmark-positioning.svg" alt="crewai-rs benchmark and positioning illustration" width="960" />
+</p>
+
 Reproduce locally:
 
 ```bash
