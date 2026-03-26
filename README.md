@@ -186,6 +186,77 @@ See [`examples/flow_pipeline.rs`](./examples/flow_pipeline.rs) for a full exampl
   <img src="./assets/architecture.svg" alt="crewai-rs architecture diagram" width="960" />
 </p>
 
+## Performance Snapshot
+
+These numbers are from a local, reproducible microbenchmark that measures orchestration overhead only. They do **not** include real network latency or provider latency.
+
+Benchmark environment:
+
+- CPU: AMD Ryzen 9 7950X 16-Core Processor
+- OS: Microsoft Windows NT 10.0.26200.0
+- `rustc`: 1.94.0 (4a4ef493e 2026-03-02)
+- run date: 2026-03-26
+- snapshot style: observed range across 3 release runs on the same machine
+
+| Scenario | Observed mean range | Observed median range | Observed p95 range | What it measures |
+| --- | ---: | ---: | ---: | --- |
+| `flow_run` | 368-461 ns | 300-400 ns | 500 ns | typed deterministic flow overhead for a two-step state machine |
+| `crew_kickoff_sequential` | 5.7-6.4 us | 5.4-6.0 us | 6.5-6.9 us | two-task crew kickoff with deterministic models and one tool call |
+| `crew_kickoff_hierarchical` | 7.1-8.0 us | 6.9-7.7 us | 7.4-8.4 us | same as above, plus a manager brief on each task |
+| `blueprint_parse_and_build` | 20.1-22.4 us | 18.8-21.1 us | 24.1-26.7 us | parse YAML and build a runtime-bound crew from a registry |
+
+One practical takeaway from this snapshot: adding the manager layer increased kickoff overhead by about **23.8% to 25.4%** versus the sequential path in the same benchmark.
+
+Reproduce locally:
+
+```bash
+cargo run --release --example runtime_bench
+```
+
+Benchmark harness: [`examples/runtime_bench.rs`](./examples/runtime_bench.rs)  
+Raw snapshot: [`benchmarks/latest.md`](./benchmarks/latest.md)
+
+## Positioning
+
+The performance story here is not "Rust magically makes your LLM faster." Network and provider latency still dominate real agent runs. The more accurate claim is:
+
+- `crewai-rs` keeps orchestration overhead very small
+- typed flows and builder APIs push more mistakes into compile time
+- static binaries and Rust deployment ergonomics are a better fit for some production teams
+
+## crewai-rs vs CrewAI
+
+The table below is intentionally not pure marketing. The CrewAI side is based on official CrewAI docs as of **2026-03-26**, especially their Flows and Observability docs.
+
+| Dimension | `crewai-rs` | CrewAI |
+| --- | --- | --- |
+| Primary runtime | Rust crate with async traits, builders, and typed state | Python-first framework with crews, flows, and CLI tooling |
+| Flow model | `Flow<State>` plus `FlowStep` traits and explicit transitions | decorator-driven flows with `@start`, `@listen`, and documented structured or unstructured state |
+| Packaging and deployment | ships as a crate and can be embedded into a single Rust binary | Python project and CLI workflow; docs show `crewai run`, `crewai flow kickoff`, and `uv`-based setup |
+| Orchestration overhead | current local benchmark shows single-digit microsecond kickoff overhead with deterministic in-memory models | not measured in this repo; Python runtime overhead is typically higher, but exact numbers depend on workload and setup |
+| Compile-time guarantees | stronger type and trait checks; more errors move left into compile time | more dynamic and faster to prototype, with more validation happening at runtime |
+| Observability | lightweight transcripts and Mermaid graphs today | much stronger today; official docs include built-in tracing, AMP, and multiple observability integrations |
+| Persistence and streaming | not implemented yet in this MVP | official Flows docs include persistence via `@persist` and streaming flow execution |
+| Ecosystem maturity | early alpha, small surface area, easier to audit end-to-end | far more mature docs, examples, integrations, and operational surface |
+| Best fit | teams that want low-overhead orchestration, typed state, and Rust-native deployment | teams that want the broader existing ecosystem and more batteries included today |
+
+Where `crewai-rs` is stronger today:
+
+- lower runtime overhead for framework-side orchestration
+- stronger compile-time guarantees around flow state and step wiring
+- easier embedding into Rust services or single-binary deployments
+
+Where CrewAI is stronger today:
+
+- richer observability and platform story
+- more complete flow features such as persistence and streaming
+- more mature ecosystem, examples, integrations, and docs
+
+CrewAI source references:
+
+- Flows: <https://docs.crewai.com/en/concepts/flows>
+- Observability: <https://docs.crewai.com/en/observability>
+
 ## OpenAI-Compatible Models
 
 Use the built-in adapter for real runs:
